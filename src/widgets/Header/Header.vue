@@ -24,7 +24,7 @@ import SecondaryButton from "@/shared/ui/SecondaryButton";
 
   .d-grid {
     display: grid;
-    grid-template-columns: 153px max-content;
+    grid-template-columns: 175px max-content;
     justify-content: space-between;
     align-items: center;
   }
