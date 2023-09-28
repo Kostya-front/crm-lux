@@ -1,5 +1,5 @@
 <template>
-  <header class="header">
+  <header class="header header-main">
     <div class="container d-grid">
       <router-link to="/">
         <img src="@/assets/logo.svg" alt="">
@@ -12,7 +12,7 @@
 
 <script setup lang="ts">
 import SecondaryButton from "@/shared/ui/SecondaryButton";
-
+import {onMounted, ref} from "vue";
 </script>
 
 <style lang="scss" scoped>

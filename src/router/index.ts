@@ -11,7 +11,7 @@ const routes: Array<RouteRecordRaw> = [
     path: '/categories',
     name: 'categories',
     component: () => import('../pages/CategoryView.vue')
-  }
+  },
 ]
 
 const router = createRouter({

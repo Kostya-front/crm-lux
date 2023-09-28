@@ -3,7 +3,7 @@
     <nav class="navigation">
       <router-link class="aside__link" to="/categories">Категории</router-link>
 
-      <router-link class="aside__link" to="/">Преимущества</router-link>
+      <router-link class="aside__link" to="/advantages">Преимущества</router-link>
 
       <router-link class="aside__link" to="/">Контакты</router-link>
     </nav>

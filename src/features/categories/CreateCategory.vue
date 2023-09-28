@@ -4,7 +4,7 @@
       class="form"
   >
     <UiInput v-model="categoriesStore.category.title" placeholder="Введите имя категории"/>
-    <UiInput v-model="categoriesStore.category.urlImage" placeholder="Введите url картинки"/>
+    <UiInput v-model="categoriesStore.category.url" placeholder="Введите url картинки"/>
     <PrimaryButton title="Создать"/>
   </form>
 </template>

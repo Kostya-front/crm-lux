@@ -8,14 +8,14 @@ import {useCategoriesStore} from "@/features/categories/categoriesStore";
 import {defineProps} from "vue";
 
 interface IProps {
-  title: string
+  id: number
 }
 const props = defineProps<IProps>()
 
 const categoriesStore = useCategoriesStore()
 
 function deleteCategory() {
-  categoriesStore.deleteCategory(props.title)
+  categoriesStore.deleteCategory(props.id)
 }
 </script>
 
