@@ -10,7 +10,7 @@
     <tr v-for="(category, index) of categoriesStore.categories" :key="category.title">
       <th scope="row">{{index + 1}}</th>
 
-      <td>{{category.title}}</td>
+      <td data-cy="category-title">{{category.title}}</td>
 
       <td>
         <div class="buttons">

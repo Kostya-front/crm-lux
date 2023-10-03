@@ -1,6 +1,7 @@
 <template>
   <input
       @input="($event) => onInput($event.target.value)"
+      :name="name"
       :value="modelValue"
       :placeholder="placeholder"
       class="input"
@@ -13,6 +14,7 @@
 interface IProps {
   placeholder: string
   modelValue: string
+  name: string
 }
 
 const props = defineProps<IProps>()

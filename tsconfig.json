@@ -13,7 +13,7 @@
     "sourceMap": true,
     "baseUrl": ".",
     "types": [
-      "webpack-env"
+      "webpack-env", "cypress", "@testing-library/cypress", "node"
     ],
     "paths": {
       "@/*": [

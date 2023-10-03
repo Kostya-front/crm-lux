@@ -2,8 +2,8 @@
   <form @submit.prevent="onSubmit" class="form">
     <div class="form__image"><img :src="categoryStore.editingCategory.url" alt=""></div>
     <div class="form__inputs">
-      <UiInput v-model="categoryStore.editingCategory.title" placeholder="Введите название категории..."/>
-      <UiInput v-model="categoryStore.editingCategory.url" placeholder="Введите url картинки"/>
+      <UiInput v-model="categoryStore.editingCategory.title" name="edit-title" placeholder="Введите название категории..."/>
+      <UiInput v-model="categoryStore.editingCategory.url" name="edit-url" placeholder="Введите url картинки"/>
       <SuccessButton title="Сохранить"/>
     </div>
   </form>
