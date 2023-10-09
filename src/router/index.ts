@@ -12,6 +12,16 @@ const routes: Array<RouteRecordRaw> = [
     name: 'categories',
     component: () => import('../pages/CategoryView.vue')
   },
+  {
+    path: '/advantages',
+    name: 'advantages',
+    component: () => import('../pages/AdvantageView.vue')
+  },
+  {
+    path: '/contacts',
+    name: 'contacts',
+    component: () => import('../pages/ContactsView.vue')
+  },
 ]
 
 const router = createRouter({

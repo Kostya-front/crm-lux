@@ -45,7 +45,7 @@ export const useCategoriesStore = defineStore('categories', () => {
   async function getAll() {
     try {
       const {data} = await instance.get('categories')
-      categories.value = data
+      categories.value = data;
     } catch (e: AxiosError | any){
       errorHandler(e)
     }

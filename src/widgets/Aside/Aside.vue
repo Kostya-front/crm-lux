@@ -5,7 +5,7 @@
 
       <router-link class="aside__link" to="/advantages">Преимущества</router-link>
 
-      <router-link class="aside__link" to="/">Контакты</router-link>
+      <router-link class="aside__link" to="/contacts">Контакты</router-link>
     </nav>
   </aside>
 </template>
