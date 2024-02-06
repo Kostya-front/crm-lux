@@ -6,6 +6,8 @@
       <router-link class="aside__link" to="/advantages">Преимущества</router-link>
 
       <router-link class="aside__link" to="/contacts">Контакты</router-link>
+
+      <router-link class="aside__link" to="/login">Логин</router-link>
     </nav>
   </aside>
 </template>

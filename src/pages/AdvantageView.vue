@@ -29,9 +29,4 @@ onMounted(() => {
 </script>
 
 <style scoped>
-.page {
-  display: flex;
-  flex-direction: column;
-  gap: 50px;
-}
 </style>

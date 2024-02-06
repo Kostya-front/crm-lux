@@ -29,7 +29,7 @@ export const useCategoriesStore = defineStore('categories', () => {
   const editingCategory = reactive<ICategory>({
     id: 0,
     title: '',
-    url: ''
+    url: '',
   })
 
   function fillEditForm(id: number) {
@@ -73,8 +73,8 @@ export const useCategoriesStore = defineStore('categories', () => {
   async function editCategory() {
     try {
       validationClientError([
-        {condition: !category.title || !category.url, message:'Все поля должны быть заполнены' },
-        {condition: category.title.length <= 3, message:'Заголовок должен быть больше 3 символов'},
+        {condition: !editingCategory.title || !editingCategory.url, message:'Все поля должны быть заполнены' },
+        {condition: editingCategory.title.length <= 3, message:'Заголовок должен быть больше 3 символов'},
       ])
 
       await instance.patch(`categories/${editingCategory.id}`, editingCategory)
@@ -107,7 +107,7 @@ export const useCategoriesStore = defineStore('categories', () => {
     errorMessage.value = ''
   }
 
-  function validationClientError(errors: {condition: any, message: string}[]) {
+  function validationClientError(errors: {condition: boolean, message: string}[]) {
     errors.forEach(error => {
       if(error.condition) {
         throw new Error(error.message)

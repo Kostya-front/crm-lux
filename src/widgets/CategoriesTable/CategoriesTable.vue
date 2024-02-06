@@ -6,22 +6,24 @@
       <th scope="col">Название категории</th>
     </tr>
     </thead>
-    <tbody>
-    <tr v-for="(category, index) of categoriesStore.categories" :key="category.title">
-      <th scope="row">{{index + 1}}</th>
 
-      <td data-cy="category-title">{{category.title}}</td>
+    <transition-group name="list" tag="tbody">
+      <tr v-for="(category, index) of categoriesStore.categories" :key="category.title" class="table__tr">
+        <th scope="row">{{index + 1}}</th>
 
-      <td>
-        <div class="buttons">
-          <TogglePopup v-slot="props">
-            <FillEditingCategory :id="category.id" :on-click="props.togglePopup"/>
-          </TogglePopup>
-          <DeleteCategory :id="category.id"/>
-        </div>
-      </td>
-    </tr>
-    </tbody>
+        <td data-cy="category-title">{{category.title}}</td>
+
+        <td>
+          <div class="buttons">
+            <TogglePopup v-slot="props">
+              <FillEditingCategory :id="category.id" :on-click="props.togglePopup"/>
+            </TogglePopup>
+
+            <DeleteCategory :id="category.id"/>
+          </div>
+        </td>
+      </tr>
+    </transition-group>
   </table>
 
   <p v-else>Пока что вы не создали ни одну категорию</p>
@@ -36,6 +38,7 @@ import TogglePopup from "@/features/popup/TogglePopup.vue";
 import FillEditingCategory from "@/features/categories/FillEditingCategory"
 
 const categoriesStore = useCategoriesStore()
+
 </script>
 
 <style scoped>
@@ -48,4 +51,25 @@ const categoriesStore = useCategoriesStore()
   justify-content: flex-end;
   gap: 20px;
 }
+
+.table__tr {
+  animation-name: showTableRow;
+  animation-duration: 1s;
+}
+
+.list-enter-active, .list-leave-active {
+  transition: all 1s;
+}
+
+.list-enter-from, .list-leave-to {
+  opacity: 0;
+  transform: translateX(-20%);
+}
+
+.list-enter-to, .list-leave-from {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+
 </style>

@@ -33,7 +33,7 @@
 
 <script setup lang="ts">
 import TogglePopup from "@/features/popup/TogglePopup.vue";
-import FillEditingCategory from "@/features/categories/FillEditingCategory"
+import FillEditingCategory from "@/features/categories/FillEditingCategory.vue"
 import {useAdvantagesStore} from "@/features/advantages/advantagesStore";
 import DeleteAdvantage from "@/features/advantages/DeleteAdvantage.vue";
 import FillUpdatingAdvantage from "@/features/advantages/FillUpdatingAdvantage.vue";

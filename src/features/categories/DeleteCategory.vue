@@ -3,7 +3,7 @@
 </template>
 
 <script setup lang="ts">
-import DangerButton from "@/shared/ui/DangerButton.vue";
+import DangerButton from "@/shared/ui/DangerButton/DangerButton.vue";
 import {useCategoriesStore} from "@/features/categories/categoriesStore";
 import {defineProps} from "vue";
 
