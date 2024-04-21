@@ -1,13 +1,13 @@
 <template>
-  <form class="form">
-    <template v-for="(input, index) of inputs" :key="input.id">
-      <UiInput  ref="input" @click="test(index)" v-focus name="phone" v-model="input.text" placeholder="Введите номер телефона"/>
+    <transition-group @submit.prevent="test" tag="form" name="phones" class="form" appear>
+      <template v-for="(input, index) of inputs" :key="input.id">
+        <UiInput  ref="input" @click="test(index)" v-focus name="phone" v-model="input.text" placeholder="Введите номер телефона"/>
 
-      <PrimaryButton v-if="index % 2 === 0" @click.prevent.native="createInput" title="+"/>
-      <DangerButton @click.native="deleteInput(input.id)" v-else title="X"/>
-    </template>
-    <PrimaryButton title="Сохранить"/>
-  </form>
+        <PrimaryButton v-if="index === 0" @click.prevent.native="createInput" title="+"/>
+        <DangerButton @click.native="deleteInput(input.id)" v-else title="X"/>
+      </template>
+      <PrimaryButton title="Сохранить"/>
+    </transition-group>
 </template>
 
 <script setup lang="ts">
@@ -36,7 +36,7 @@ function deleteInput(id: number) {
 }
 
 function test(index: number) {
-  input.value && input.value[index].click()
+  alert(1232)
 }
 onMounted(() => {
 
@@ -49,5 +49,17 @@ onMounted(() => {
   grid-template-columns: 5fr 1fr;
 
   gap: 15px;
+}
+
+.phones-move, .phones-enter-active, .phones-enter-leave {
+  transition: 1s;
+}
+
+.phones-enter-from, .phones-leave-to {
+  opacity: 0;
+}
+
+.phones-enter-to, .phones-leave-from {
+  opacity: 1;
 }
 </style>

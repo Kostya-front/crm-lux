@@ -5,14 +5,21 @@
         <img src="@/assets/logo.svg" alt="">
       </router-link>
 
-      <SecondaryButton title="Выйти"/>
+      <LogoutUser/>
     </div>
+    <button @click="test2">click</button>
   </header>
 </template>
 
 <script setup lang="ts">
-import SecondaryButton from "@/shared/ui/SecondaryButton";
-import {onMounted, ref} from "vue";
+import LogoutUser from "@/features/auth/components/LogoutUser.vue";
+import { ref } from "vue";
+const test = ref(0)
+
+function test2() {
+  const qwe = ++test.value
+}
+
 </script>
 
 <style lang="scss" scoped>

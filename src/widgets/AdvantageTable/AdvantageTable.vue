@@ -37,10 +37,14 @@ import FillEditingCategory from "@/features/categories/FillEditingCategory.vue"
 import {useAdvantagesStore} from "@/features/advantages/advantagesStore";
 import DeleteAdvantage from "@/features/advantages/DeleteAdvantage.vue";
 import FillUpdatingAdvantage from "@/features/advantages/FillUpdatingAdvantage.vue";
-import { computed, ref } from "vue";
+import { computed, ref, onMounted } from "vue";
 import EditDescription from "@/features/advantages/EditDescription.vue";
+import {delay} from "@/shared/helpers";
 
 const advantageStore = useAdvantagesStore()
+
+await delay()
+await advantageStore.getAll()
 </script>
 
 <style lang="scss" scoped>

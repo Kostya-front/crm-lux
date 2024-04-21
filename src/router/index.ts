@@ -35,6 +35,11 @@ const routes: Array<RouteRecordRaw> = [
     name: 'login',
     component: () => import('../pages/LoginView.vue')
   },
+  {
+    path: '/activate/:key',
+    name: 'activate',
+    component: () => import('../pages/ActivationView.vue')
+  }
 ]
 
 const router = createRouter({
@@ -42,6 +47,33 @@ const router = createRouter({
   routes
 })
 
+router.beforeEach(async (to, from) => {
+  const authStore = useAuthStore()
+
+  try {
+    if(to.path === '/auth') {
+      return true
+  }
+
+  const usAuth = await authStore.check()
+  console.log(123)
+  return true
+  } catch {
+    console.log(2342)
+    return '/auth'
+  }
+
+
+  // authStore.check().then((res) => {
+  //   //@ts-ignore
+  //   if(res.status > 300) {
+  //     throw new Error('')
+  //   }
+
+  //   next()
+  // }).catch(() => next('/auth'))
+
+})
 
 
 

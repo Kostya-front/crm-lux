@@ -17,4 +17,5 @@ import {reactive, ref} from "vue";
   flex-direction: column;
   gap: 50px;
 }
+
 </style>

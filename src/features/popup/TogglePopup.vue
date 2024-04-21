@@ -11,7 +11,7 @@ import { onBeforeUpdate, onMounted } from "vue";
 const popupStore = usePopupStore()
 
 onBeforeUpdate(() => {
-  console.log(123)
+
 })
 </script>
 

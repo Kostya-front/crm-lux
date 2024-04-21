@@ -4,7 +4,10 @@
 
     <AdvantageForm/>
 
-    <AdvantageTable/>
+    <PreLoader>
+      <AdvantageTable/>
+    </PreLoader>
+
 
     <Popup>
       <EditAdvantage/>
@@ -19,13 +22,12 @@ import AdvantageTable from "@/widgets/AdvantageTable/AdvantageTable.vue";
 import {useAdvantagesStore} from "@/features/advantages/advantagesStore";
 import {onMounted} from "vue";
 import Popup from "@/widgets/Popup/Popup.vue";
-import EditAdvantage from '@/features/advantages/EditAdvantage'
+import EditAdvantage from '@/features/advantages/EditAdvantage.vue'
+import PreLoader from "@/widgets/PreLoader/PreLoader.vue";
+import {delay} from "@/shared/helpers";
 
 const advantageStore = useAdvantagesStore()
 
-onMounted(() => {
-  advantageStore.getAll()
-})
 </script>
 
 <style scoped>

@@ -5,7 +5,9 @@
     <Aside />
 
     <main class="main">
-      <RouterView/>
+      <PreLoader>
+        <RouterView/>
+      </PreLoader>
     </main>
   </div>
 
@@ -67,6 +69,7 @@ import Aside from "@/widgets/Aside/Aside"
 import {useAuthStore} from "@/features/auth/athStore";
 import {computed} from "vue";
 import {useRoute} from "vue-router";
+import PreLoader from "@/widgets/PreLoader/PreLoader.vue";
 
 const authStore = useAuthStore()
 const route = useRoute()

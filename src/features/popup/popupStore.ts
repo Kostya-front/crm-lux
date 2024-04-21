@@ -1,5 +1,6 @@
 import {defineStore} from "pinia";
-import {ref} from "vue";
+import {ref, watch} from "vue";
+import router from "@/router";
 
 
 export const usePopupStore = defineStore('popup', () => {
@@ -11,9 +12,9 @@ export const usePopupStore = defineStore('popup', () => {
     isVisible.value = !isVisible.value
   }
 
+
   return {
     isVisible,
     togglePopup,
-
   }
 })

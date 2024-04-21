@@ -1,5 +1,5 @@
 <template>
-  <table v-if="categoriesStore.categories.length" class="table">
+  <table v-if="categoriesStore?.categories?.length" class="table">
     <thead>
     <tr>
       <th scope="col">#</th>
@@ -30,15 +30,17 @@
 </template>
 
 <script setup lang="ts">
-
+import { onMounted } from "vue";
 import {useCategoriesStore} from "@/features/categories/categoriesStore";
 import DeleteCategory from "@/features/categories/DeleteCategory.vue";
 import SuccessButton from "@/shared/ui/SuccessButton.vue"
 import TogglePopup from "@/features/popup/TogglePopup.vue";
-import FillEditingCategory from "@/features/categories/FillEditingCategory"
+import FillEditingCategory from "@/features/categories/FillEditingCategory.vue"
+import {delay} from '@/shared/helpers/index'
 
 const categoriesStore = useCategoriesStore()
 
+await categoriesStore.getAll()
 </script>
 
 <style scoped>
