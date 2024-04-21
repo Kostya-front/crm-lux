@@ -56,10 +56,8 @@ router.beforeEach(async (to, from) => {
   }
 
   const usAuth = await authStore.check()
-  console.log(123)
   return true
   } catch {
-    console.log(2342)
     return '/auth'
   }
 
